@@ -9,7 +9,7 @@
 
 git-info will create a config that you can use to link to dynamic places such as versioned cdn repository folders.
 
-#### [Example Results](https://github.com/Artistan/git-info/blob/master/example/example.md)
+Works well as a simple Php object or as a package for Laravel 5.6.
 
 ### composer
 ```json
@@ -24,6 +24,57 @@ git-info will create a config that you can use to link to dynamic places such as
 composer require artistan/git-info 
 php artisan vendor:publish --provider=artistan/git-info 
 ```
+
+#### [Example Laravel](https://github.com/Artistan/git-info/blob/master/example/example.md)
+
+`./app/Providers/AppServiceProvider.php`
+
+```php
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        /**
+         * last-cached will be null if not cached...
+         */
+        if (is_null(config('cdn.last-cached'))) {
+            config([
+                'cdn.last-cached' => microtime(true),
+                /**
+                 * This will set my path dynamically based on the tag/branch
+                 */
+                'cdn.path' => config('git-info.path'),
+                'cdn.url' => config('cdn.uri').config('git-info.path')
+            ]);
+        }
+        /**
+         * now I can use config('cdn.url') to route to my current versioned content on my cdn
+         */
+    }
+```
+
+
+
+#### Example Php
+
+```php
+require '../vendor/autoload.php';
+
+$git = new Artistan\GitInfo\GitInfoEnv();
+
+var_dump($git->getShortHash());
+var_dump($git->getVersion());
+var_dump($git->getDate());
+var_dump($git->getApplicationVersionString());
+var_dump($branch = $git->getBranch());
+var_dump($tag = $git->getLatestTag());
+var_dump($path = $git->buildPath($branch,$tag,null));
+var_dump($git->getConfigs())
+```
+
 
 #### [Documentation](https://github.com/victorjonsson/PHP-Markdown-Documentation-Generator) Updates
 
