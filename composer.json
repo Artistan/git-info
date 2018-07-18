@@ -43,7 +43,11 @@
         "laravel": {
             "providers": [
                 "Artistan\\GitInfo\\GitInfoProvider"
-            ]
+            ],
+            "aliases": {
+                "GitInfoEnv": "Artistan\\GitInfo\\GitInfoEnvFacade",
+                "GitInfo": "Artistan\\GitInfo\\GitInfo"
+            }
         }
     }
 }
