@@ -1,0 +1,12 @@
+
+Artistan/git-lab is Copyright (c) 2018 by Charles Peterson
+
+--------------------------------------------------------------------------------
+
+Artistan/git-lab utilizes app-git-version
+
+ - https://github.com/eiriksm/php-app-git-version
+
+--------------------------------------------------------------------------------
+
+
