@@ -71,10 +71,10 @@ var_dump($git->getDate());
 var_dump($git->getApplicationVersionString());
 var_dump($branch = $git->getBranch());
 var_dump($tag = $git->getLatestTag());
-var_dump($path = $git->buildPath($branch,$tag,null));
+var_dump($path = $git->buildPath($branch,$tag,'/path/[TAG]'));
 var_dump($git->getConfigs())
 ```
-
+will end up with `/path/branchName` or  `/path/{v#.#.#}`
 
 #### [Documentation](https://github.com/victorjonsson/PHP-Markdown-Documentation-Generator) Updates
 
