@@ -14,7 +14,7 @@ Works well as a simple Php object or as a package for Laravel 5.6.
 ### composer
 ```json
     "require": {
-        "artistan/revive-xmlrpc": "*"
+        "artistan/git-info": "*"
     }
 ```
 
