@@ -60,7 +60,7 @@ class GitInfoProvider extends ServiceProvider
             /**
              * This will get the config update if they are still null
              */
-            $configUpdates = $GitInfoEnvInstance->getConfigs(config('git-info.branch'), config('git-info.tag'), config('git-info.path'));
+            $configUpdates = $GitInfoEnvInstance->getConfigs(config('git-info.path'), config('git-info.repo'), config('git-info.branch'), config('git-info.tag'), config('git-info.tag_over_ride'));
             /**
              * the final array is passed to config in order to store them in the standard config for global access
              */

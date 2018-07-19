@@ -65,14 +65,19 @@ require '../vendor/autoload.php';
 
 $git = new Artistan\GitInfo\GitInfoEnv();
 
+// build all dynamic with
+var_dump($git->getConfigs('/path/[REPO]/[BRANCH]/[TAG]'))
+
+// or dig into all the options...
 var_dump($git->getShortHash());
 var_dump($git->getVersion());
 var_dump($git->getDate());
 var_dump($git->getApplicationVersionString());
+var_dump($repo = $git->getRepo());
 var_dump($branch = $git->getBranch());
 var_dump($tag = $git->getLatestTag());
-var_dump($path = $git->buildPath($branch,$tag,null));
-var_dump($git->getConfigs())
+// null coalesce allows $tag to failover to $branch if it is null
+var_dump($path = $git->buildPath($repo,$branch,$tag??$branch,null));
 ```
 
 
