@@ -14,7 +14,7 @@ Works well as a simple Php object or as a package for Laravel 5.6.
 ### composer
 ```json
     "require": {
-        "artistan/revive-xmlrpc": "*"
+        "artistan/git-info": "*"
     }
 ```
 
@@ -79,7 +79,7 @@ var_dump($tag = $git->getLatestTag());
 // null coalesce allows $tag to failover to $branch if it is null
 var_dump($path = $git->buildPath($repo,$branch,$tag??$branch,null));
 ```
-
+will end up with `/path/branchName` or  `/path/{v#.#.#}`
 
 #### [Documentation](https://github.com/victorjonsson/PHP-Markdown-Documentation-Generator) Updates
 
