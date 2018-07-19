@@ -9,19 +9,25 @@ note the url is build dynamically from the cdn.uri and the git-info.path
 
 #### this is after tagging the repository 
 
+Likely used in ...
 - production
 - milestone
-- versioned on the same branch
+
+Tag name used ...
+- versioned on the deployed branch
 
 ![cdn config dumpndie](./img/cdn-tag-dd.png)
 
 #### this is without a tag on the repository
 
+Likely used in ...
 - stagging
 - development
-- separate branches for deployments
 
-![Git Info config dumpndie](./img/cdn-branch-dd.png)
+No tag ends up being `default'
+- separate urls for branches
+
+![Git Info config dumpndie](./img/cdn-branch-dd.png) 
 
 ### copy the files in this example 
 
