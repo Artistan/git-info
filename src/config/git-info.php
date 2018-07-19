@@ -62,5 +62,18 @@ return [
      *     use tag_over_ride='' (empty string)
      */
 
-    'tag_over_ride' => 'default'
+    'tag_over_ride' => 'default',
+
+    'deploy' => [
+        'servers' => [
+            /**
+             * environment, if none, the deploy will not work
+             */
+            'production' => [
+                /**
+                 * strings for  hostnames to rsync the built content to from the
+                 */
+            ]
+        ]
+    ],
 ];
